@@ -16,7 +16,6 @@ print("3.all above")
 method = raw_input("Input the number of DNN methods and press ENTER to continue..")
 method = str(method)
 
-# Note:validation set for finding out the best parameters
 # input file format: *.sdf
 # featurization
 mol2vec.features.featurize('input_file/testset.sdf', 'output_file/testset_mol2vec.csv', 'input_file/model_300dim.pkl', 1, uncommon=None)
@@ -41,6 +40,7 @@ user_specified_features = ['mol2vec-000', 'mol2vec-001', 'mol2vec-002', 'mol2vec
                            'mol2vec-096', 'mol2vec-097', 'mol2vec-098', 'mol2vec-099']
 featurizer = dc.feat.UserDefinedFeaturizer(user_specified_features)
 
+# Note: training sets for building models, validation sets for final evaluation, test sets  for tuning hyperparameters.
 # Load trainingset
 trainingset_file = 'output_file/trainingset_mol2vec.csv'
 trainingset = dc.utils.save.load_from_disk(trainingset_file)
