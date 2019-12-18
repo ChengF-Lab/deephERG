@@ -13,7 +13,7 @@ np.set_printoptions(threshold=np.nan)
 print("1.multi-Task-DNN")
 print("2.single-Task-DNN")
 print("3.all above")
-method = raw_input("Input the number of DNN methods and press ENTER to continue..")
+method = input("Input the number of DNN methods and press ENTER to continue..")
 method = str(method)
 
 # input file format: *.sdf
