@@ -13,7 +13,7 @@ np.set_printoptions(threshold=np.nan)
 print("1.multi-Task-DNN")
 print("2.single-Task-DNN")
 print("3.all above")
-method = raw_input("Input the number of DNN methods and press ENTER to continue..")
+method = input("Input the number of DNN methods and press ENTER to continue..")
 method = str(method)
 
 # input file format: *.sdf
@@ -134,27 +134,27 @@ def result(best_model, dataset_train, transformers_train,dataset_test,transforme
     print("----------------------------------------------------------------")
     print("Scores for trial %d" % trial)
     print("----------------------------------------------------------------")
-    print("train_roc_auc_score: ")+str(train_roc_auc_score)
-    print("train_pertask_roc_auc_score: ")+str(train_pertask_roc_auc_score)
-    print("train_accuracy_score: ")+str(train_accuracy_score)
-    print("train_pertask_accuracy_score: ")+str(train_pertask_accuracy_score)
-    print("train_matthews_score: ")+str(train_matthews_score)
-    print("train_pertask_matthews_score: ")+str(train_pertask_matthews_score)
-    print("train_recall_score: ")+str(train_recall_score)
-    print("train_pertask_recall_score: ")+str(train_pertask_recall_score)
-    print("train_precision_score: ")+str(train_precision_score)
-    print("train_pertask_precision_score: ")+str(train_pertask_precision_score)
+    print("train_roc_auc_score: " + str(train_roc_auc_score))
+    print("train_pertask_roc_auc_score: " + str(train_pertask_roc_auc_score))
+    print("train_accuracy_score: " + str(train_accuracy_score))
+    print("train_pertask_accuracy_score: " + str(train_pertask_accuracy_score))
+    print("train_matthews_score: " + str(train_matthews_score))
+    print("train_pertask_matthews_score: " + str(train_pertask_matthews_score))
+    print("train_recall_score: " + str(train_recall_score))
+    print("train_pertask_recall_score: " + str(train_pertask_recall_score))
+    print("train_precision_score: " + str(train_precision_score))
+    print("train_pertask_precision_score: " + str(train_pertask_precision_score))
 
-    print("validation_roc_auc_score: ")+str(validation_roc_auc_score)
-    print("validation_pertask_roc_auc_score: ")+str(validation_pertask_roc_auc_score)
-    print("validation_accuracy_score: ")+str(validation_accuracy_score)
-    print("validation_pertask_accuracy_score: ")+str(validation_pertask_accuracy_score)
-    print("validation_matthews_score: ")+str(validation_matthews_score)
-    print("validation_pertask_matthews_score: ")+str(validation_pertask_matthews_score)
-    print("validation_recall_score: ")+str(validation_recall_score)
-    print("validation_pertask_recall_score: ")+str(validation_pertask_recall_score)
-    print("validation_precision_score: ")+str(validation_precision_score)
-    print("validation_pertask_precision_score: ")+str(validation_pertask_precision_score)
+    print("validation_roc_auc_score: " + str(validation_roc_auc_score))
+    print("validation_pertask_roc_auc_score: " + str(validation_pertask_roc_auc_score))
+    print("validation_accuracy_score: " + str(validation_accuracy_score))
+    print("validation_pertask_accuracy_score: " + str(validation_pertask_accuracy_score))
+    print("validation_matthews_score: " + str(validation_matthews_score))
+    print("validation_pertask_matthews_score: " + str(validation_pertask_matthews_score))
+    print("validation_recall_score: " + str(validation_recall_score))
+    print("validation_pertask_recall_score: " + str(validation_pertask_recall_score))
+    print("validation_precision_score: " + str(validation_precision_score))
+    print("validation_pertask_precision_score: " + str(validation_pertask_precision_score))
     return
 
 if method =="1" or method =="3":
@@ -189,7 +189,7 @@ if method =="1" or method =="3":
                        }
 
         def model_builder(model_params, model_dir):
-            model = dc.models.TensorflowMultiTaskClassifier(
+            model = dc.models.MultitaskClassifier(
                 n_tasks=len(tasks),
                 n_features=n_features,
                 layer_sizes=[200, 100, 50],
@@ -258,7 +258,7 @@ if method =="2" or method =="3":
                        }
 
         def model_builder(model_params, model_dir):
-            model = dc.models.TensorflowMultiTaskClassifier(
+            model = dc.models.MultitaskClassifier(
                 n_tasks=len(tasks),
                 n_features=n_features,
                 layer_sizes=[200, 100, 50],
