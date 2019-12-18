@@ -189,7 +189,7 @@ if method =="1" or method =="3":
                        }
 
         def model_builder(model_params, model_dir):
-            model = dc.models.TensorflowMultiTaskClassifier(
+            model = dc.models.MultitaskClassifier(
                 n_tasks=len(tasks),
                 n_features=n_features,
                 layer_sizes=[200, 100, 50],
@@ -258,7 +258,7 @@ if method =="2" or method =="3":
                        }
 
         def model_builder(model_params, model_dir):
-            model = dc.models.TensorflowMultiTaskClassifier(
+            model = dc.models.MultitaskClassifier(
                 n_tasks=len(tasks),
                 n_features=n_features,
                 layer_sizes=[200, 100, 50],
